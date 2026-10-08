@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "indentation": {
+    "spaces": 4
+  },
+  "lineLength": 300,
+  "maximumBlankLines": 1,
+  "respectsExistingLineBreaks": true,
+  "lineBreakBeforeEachArgument": false,
+  "lineBreakBeforeEachGenericRequirement": false,
+  "prioritizeKeepingFunctionOutputTogether": false,
+  "indentConditionalCompilationBlocks": true,
+  "lineBreakAroundMultilineExpressionChainComponents": false,
+  "rules": {
+    "AlwaysUseLowerCamelCase": false,
+    "AllPublicDeclarationsHaveDocumentation": false,
+    "OrderedImports": false,
+    "NoBlockComments": false,
+    "UseLetInEveryBoundCaseVariable": false,
+    "NeverForceUnwrap": false,
+    "NeverUseForceTry": false,
+    "NeverUseImplicitlyUnwrappedOptionals": false,
+    "ReturnVoidInsteadOfEmptyTuple": false,
+    "UseSynthesizedInitializer": false,
+    "FileScopedDeclarationPrivacy": false
+  }
+}

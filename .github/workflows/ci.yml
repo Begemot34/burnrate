@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "mac/**"
+      - "Makefile"
+      - "scripts/**"
+      - ".github/workflows/**"
+      - ".swift-format"
+  pull_request:
+    branches: [main]
+    paths:
+      - "mac/**"
+      - "Makefile"
+      - "scripts/**"
+      - ".github/workflows/**"
+      - ".swift-format"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+          v="$(swift --version 2>&1 | sed -n 's/.*Swift version \([0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' | head -1)"
+          major="${v%%.*}"; minor="${v#*.}"
+          if [ -z "$v" ] || [ "$major" -lt 6 ] || { [ "$major" -eq 6 ] && [ "$minor" -lt 2 ]; }; then
+            echo "Swift 6.2 or newer is required, found '${v:-none}'" >&2
+            exit 1
+          fi
+
+      - run: make lint
+      - run: make test
+      - run: make mac
+      - name: Syntax-check scripts
+        run: for f in scripts/*.sh mac/build-app.sh; do bash -n "$f"; done
