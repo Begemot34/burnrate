@@ -37,15 +37,20 @@ Needs macOS 26 and Swift 6.2: Xcode 26 or the Command Line Tools (`xcode-select 
 curl -fsSL https://raw.githubusercontent.com/Begemot34/burnrate/main/scripts/install.sh | bash
 ```
 
-The script clones into `~/.local/src/burnrate`, builds, installs `~/Applications/Burnrate.app` and
-`~/.local/bin/burnratectl`, and starts the app. From a clone it is the same script:
+This one command builds Burnrate on your Mac, installs it into `~/Applications` with `burnratectl`
+in `~/.local/bin`, and starts it. The build is ad-hoc signed and not notarized, so it runs only on
+the Mac that built it.
+
+<details>
+<summary>Or install from a clone</summary>
 
 ```bash
-git clone https://github.com/Begemot34/burnrate.git && cd burnrate
-./scripts/install.sh
+git clone https://github.com/Begemot34/burnrate.git
+cd burnrate && ./scripts/install.sh
 ```
 
-The app is built and ad-hoc signed on your Mac, not notarized, so the bundle won't run on another Mac.
+Same script, same result; it builds the clone as it is, without pulling.
+</details>
 
 ### Getting started
 
