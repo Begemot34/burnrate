@@ -5,15 +5,9 @@
 [![Swift 6.2](https://img.shields.io/badge/Swift-6.2-F05138)](mac/Package.swift)
 [![MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-<p>
-  <img src="docs/screenshots/cyberpunk.png" width="49%" alt="Burnrate, Cyberpunk look">
-  <img src="docs/screenshots/boring-dark.png" width="49%" alt="Burnrate, Boring look (dark)">
+<p align="center">
+  <img src="docs/screenshots/cyberpunk.png" alt="Burnrate window, Cyberpunk look">
 </p>
-<p>
-  <img src="docs/screenshots/cyberpunk-menu.png" width="24%" alt="Menu bar panel, Cyberpunk">
-  <img src="docs/screenshots/boring-menu-light.png" width="21%" alt="Menu bar panel, Boring (light)">
-</p>
-<!-- widget screenshot: docs/screenshots/widget.png -->
 
 Burnrate is a macOS menu bar app, window and desktop widget that shows how much of your AI
 subscriptions and prepaid balances you have burned: Claude Code and Codex rate-limit windows with a
@@ -21,6 +15,19 @@ forecast of where the week is heading, OpenRouter and Replicate credits, Higgsfi
 month's spend, and what the last 30 days of Claude Code and Codex use would have cost at API prices.
 Everything runs on your Mac, polling the services with the logins you already have. No server, no
 account, nothing leaves the machine except the requests to those services.
+
+<table>
+  <tr>
+    <td width="66%"><img src="docs/screenshots/boring.png" alt="Burnrate window, Boring look"></td>
+    <td width="34%"><img src="docs/screenshots/boring-menu.png" alt="Menu bar panel, Boring look"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/widget-medium.png" alt="Medium desktop widget"></td>
+    <td><img src="docs/screenshots/widget-small.png" alt="Small desktop widget"></td>
+  </tr>
+</table>
+
+The Boring look with its menu bar panel, and the desktop widgets (medium and small).
 
 ## Install
 
