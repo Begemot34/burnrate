@@ -37,6 +37,12 @@ Needs macOS 26 and Swift 6.2: Xcode 26 or the Command Line Tools (`xcode-select 
 curl -fsSL https://raw.githubusercontent.com/Begemot34/burnrate/main/scripts/install.sh | bash
 ```
 
+### Install with an AI agent
+
+```text
+Install Burnrate on this Mac by following https://raw.githubusercontent.com/Begemot34/burnrate/main/llms-install.md — ask me to confirm before anything that writes outside the clone or launches an app, and show me those commands first.
+```
+
 This one command builds Burnrate on your Mac, installs it into `~/Applications` with `burnratectl`
 in `~/.local/bin`, and starts it. The build is ad-hoc signed and not notarized, so it runs only on
 the Mac that built it.
@@ -74,12 +80,6 @@ Run the install command again to update. To remove the app and `burnratectl`:
 ```
 
 From a clone, use `scripts/uninstall.sh` there.
-
-### Install with an AI agent
-
-```text
-Install Burnrate on this Mac by following https://raw.githubusercontent.com/Begemot34/burnrate/main/llms-install.md — ask me to confirm before anything that writes outside the clone or launches an app, and show me those commands first.
-```
 
 ## Features
 
